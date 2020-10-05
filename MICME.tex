@@ -5,7 +5,11 @@
 %%%%% e-mail: micme2017@yandex.ru
 %%%%% site: http://micme.cfuv.ru/ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%7 - 1, 
+%9 - 2, 
+%4 - 3,
+%5 - 4,
+%6 - 5
 %ПРАВИЛА ОФОРМЛЕНИЯ МАТЕРИАЛОВ:
 %
 %Материалы должны быть оформлены с использованием стилевого файла micmo.cls по образцу примера MICME.tex в редакторе LaTeX на русском или английском языке.
@@ -27,39 +31,39 @@
 \sloppy
 %\newcommand{\ds}{\displaystyle}
 
-\topmatter{И.\;О.\;Фамилия} %укажите свои инициалы и фамилию в предложенном формате
+\topmatter{В.\;С.\;Козенко} %укажите свои инициалы и фамилию в предложенном формате
 
-\udc{XXX.XX} %укажите УДК вашей работы
+\udc{004.08} %укажите УДК вашей работы
 
-\title{Название статьи} %укажите название вашей работы
+\title{Сравнительный анализ библиотек глубокого обучения} %укажите название вашей работы
 
 %\thanks{Работа выполнена при финансовой поддержке~\ldots}
 
-\author{И.\;О.\;Фамилия}%\author{инициалы и фамилия}
+\author{В.\;С.\;Козенко}%\author{инициалы и фамилия}
        {Крымский федеральный университет им.\;В.\;И.\;Вернадского, \textit{e-mail: mail@.ru}} %{контактные данные}
        
 \date{01.03.2018} %дата подачи работы
 
-\enabstracts{XXAXX}%\enabstracts{обозначения MSC2010}
-  {N.\;N.\;Surname}%{инициалы и фамилия на английском языке}
+\enabstracts{68T99}%\enabstracts{обозначения MSC2010}
+  {V.\;S.\;Kozenko}%{инициалы и фамилия на английском языке}
   {V.\;I.\;Vernadsky Crimean Federal University} %{контактные данные на английском языке}
-  {English title}%{название работы на английском языке}
-  {\ldots.}%{аннотация на английском языке}
-  {\ldots.}%{ключевые слова на английском языке} 
+  {Comparative analisis of deep learning libraries}%{название работы на английском языке}
+  {This article explains the comparison of the deep learning libraries TensorFlow, PyTorch, Keras. The comparison results are presented in the form of a table at the end of the article.}%{аннотация на английском языке}
+  {Deep learning, neural network, libraries.}%{ключевые слова на английском языке} 
  
 \begin{document}
 \begin{article}
 
-\abstracts{~\ldots.}%{текст аннотации}
-{\ldots.} %{ключевые слова}
+\abstracts{Данная статья поясвящена сравнению библиотек глубокого обучения TensorFlow, PyTorch, Keras. Итоги сравнения представлены в виде таблицы в конце статьи.}%{текст аннотации}
+{Глубокое обучение, нейросети, библиотеки, TensorFlow, PyTorch, Keras.} %{ключевые слова}
 
 \section*{Сравнение библиотек глубокого обучения}
 \subsection{Теоритическое сравнение}
-TensorFlow - открытая библиотека для машинного обучения, разработанная компанией Google, для решения задач построения и тренировки нейронных сетей. Основной API для работы с библиотекой реализован для Python также существуют реализации для C Sharp, C++, Haskell, Java, Go и Swift. Является продолжением закрытого проекта DistBelief. Изначально TensorFlow была разработана командой Google Brain для внутреннего использования в Google, в 2015 году система была переведена в свободный доступ [7].
+TensorFlow --- открытая библиотека для машинного обучения, разработанная компанией Google, для решения задач построения и тренировки нейронных сетей. Основной API для работы с библиотекой реализован для Python также существуют реализации для C Sharp, C++, Haskell, Java, Go и Swift. Является продолжением закрытого проекта DistBelief. Изначально TensorFlow была разработана командой Google Brain для внутреннего использования в Google, в 2015 году система была переведена в свободный доступ~\cite{wiki}.
 
-PyTorch - библиотека машинного обучения для языка Python с открытым исходным кодом, созданная на базе Torch. Разрабатывается преимущественно группой искусственного интеллекта Facebook. Также вокруг этого фреймворка выстроена экосистема, состоящая из различных библиотек, разрабатываемых сторонними командами: Fast.ai, упрощающая процесс обучения моделей, Pyro, модуль для вероятностного программирования, от Uber, Flair, для обработки естественного языка и Catalyst, для обучения DL и RL моделей [7].
+PyTorch --- библиотека машинного обучения для языка Python с открытым исходным кодом, созданная на базе Torch. Разрабатывается преимущественно группой искусственного интеллекта Facebook. Также вокруг этого фреймворка выстроена экосистема, состоящая из различных библиотек, разрабатываемых сторонними командами: Fast.ai, упрощающая процесс обучения моделей, Pyro, модуль для вероятностного программирования, от Uber, Flair, для обработки естественного языка и Catalyst, для обучения DL и RL моделей~\cite{wiki}.
 
-Keras - открытая нейросетевая библиотека, написанная на языке Python. Она представляет собой надстройку над фреймворками Deeplearning4j, TensorFlow и Theano. Нацелена на оперативную работу с сетями глубинного обучения, при этом спроектирована так, чтобы быть компактной, модульной и расширяемой. Она была создана как часть исследовательских усилий проекта ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating System), а ее основным автором и поддерживающим является Франсуа Шолле (Fran?ois Chollet), инженер Google. Планировалось что Google будет поддерживать Keras в основной библиотеке TensorFlow, однако Шолле выделил Keras в отдельную надстройку, так как согласно концепции Keras является скорее интерфейсом, чем сквозной системой машинного обучения. Keras предоставляет высокоуровневый, более интуитивный набор абстракций, который делает простым формирование нейронных сетей, независимо от используемой в качестве вычислительного бэкенда библиотеки научных вычислений. Microsoft работает над добавлением к Keras и низкоуровневых библиотек CNTK [7].
+Keras --- открытая нейросетевая библиотека, написанная на языке Python. Она представляет собой надстройку над фреймворками Deeplearning4j, TensorFlow и Theano. Нацелена на оперативную работу с сетями глубинного обучения, при этом спроектирована так, чтобы быть компактной, модульной и расширяемой. Она была создана как часть исследовательских усилий проекта ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating System), а ее основным автором и поддерживающим является Франсуа Шолле (Fran?ois Chollet), инженер Google. Планировалось что Google будет поддерживать Keras в основной библиотеке TensorFlow, однако Шолле выделил Keras в отдельную надстройку, так как согласно концепции Keras является скорее интерфейсом, чем сквозной системой машинного обучения. Keras предоставляет высокоуровневый, более интуитивный набор абстракций, который делает простым формирование нейронных сетей, независимо от используемой в качестве вычислительного бэкенда библиотеки научных вычислений. Microsoft работает над добавлением к Keras и низкоуровневых библиотек CNTK~\cite{wiki}.
 
 Вообще все современные фреймворки можно разделить на три крупных класса:
 \begin{itemize}
@@ -76,38 +80,38 @@ Keras - открытая нейросетевая библиотека, написанная на языке Python. Она предст
 
 Сравним ярких представителей этих классов.
 
-Видим, что у PyTorch граф вычислений динамический, у TensorFlow - статический, а у Keras - зависит от того, как интерфейс какой библиотеки мы его используем.
+Видим, что у PyTorch граф вычислений динамический, у TensorFlow --- статический, а у Keras --- зависит от того, как интерфейс какой библиотеки мы его используем.
 
 Из ограничений, накладываемых видом графа вычислений вытекает следующее отличие: логичность построенной программы. Сравним два кода с использованием цикла \verb'while':
 \begin{itemize}
 	\item[$-$] на TensorFlow:
 	\begin{listing}{1}
-		import tensorflow as tf
-		x = tf.constant(2, shape=[2, 2]) 
-		w = tf.while_loop(
-		lambda x: tf.reduce_sum(x) < 100, 
-		lambda x: tf.nn.relu(tf.square(x)), 
-		[x])
+import tensorflow as tf
+x = tf.constant(2, shape=[2, 2]) 
+w = tf.while_loop(
+	lambda x: tf.reduce_sum(x) < 100, 
+	lambda x: tf.nn.relu(tf.square(x)), 
+	[x])
 	\end{listing}
 	\item[$-$] на PyTorch:
 	\begin{listing}{1}
-		import torch.nn
-		from torch.autograd import Variable
-		x = Variable(torch.ones([2, 2]) * 2) 
-		while x.sum() < 100:
-		x = torch.nn.ReLU()(x**2)
+import torch.nn
+from torch.autograd import Variable
+x = Variable(torch.ones([2, 2]) * 2) 
+while x.sum() < 100:
+	x = torch.nn.ReLU()(x**2)
 	\end{listing}
 \end{itemize}
 
 Циклы в графах TensorFlow следует представлять как операции \verb'tf.while()', принимающей на вход \verb'condition' и подграф \verb'body'. Так же и с операцией ветвления: она принимает в качестве ввода три параметра: условный подграф и два подграфа для двух веток развития условия: \verb'if' и \verb'else'. А для реализации этих операций на PyTorch нам хватает просто языка Python, и эта реализация выглядит логичнее.
 
-Каждый из фреймворков поддерживает реализацию новых операций. Для PyTorch их можно написать на Python и на С++ [4], для TensorFlow на С++ [5], для Keras на Python [6]. Разработчики предоставляют инструкции по данным вопросам.
+Каждый из фреймворков поддерживает реализацию новых операций. Для PyTorch их можно написать на Python и на С++~\cite{PyTorch}, для TensorFlow на С++~\cite{TensorFlow}, для Keras на Python~\cite{Keras}. Разработчики предоставляют инструкции по данным вопросам.
 
-Специалисты придерживаются мнения, что у TensorFlow плохое качество документации, в отличии от Keras и PyTorch [9].
+Специалисты придерживаются мнения, что у TensorFlow плохое качество документации, в отличии от Keras и PyTorch~\cite{sim0nSays}.
 
 Связав все предыдущие параметры воедино, а так же заметив, что API TensorFlow предоставляет лишь простейшие инструкции по сборке, необходимые для создания расчетных графов, он лишен «стандартной библиотеки» для наиболее распространенных фрагментов программ. Поэтому более высокоуровневые API поверх TensorFlow реализованы сообществом, из-за чего их появилось множество и они совершенно различны (наиболее популярные из этих API: Keras, TFLearn, PrettyTensor, TF-Slim). В случае с PyTorch все сложилось иначе: он уже оснащен самыми ходовыми элементами, нужными для ежедневных исследований в области глубокого обучения. В PyTorch есть нативный Keras-подобный API в пакете torch.nn.
 
-\begin{tabular}{| c | c | c | c | c | c |}
+\begin{tabular}[t]{| p{60pt} | p{75pt} | p{67pt} | p{64pt} | p{60pt} | p{60pt} |}
 	\multicolumn{6}{r}{Таблица 1. 1.}\\
 	\hline
 	& \bf{Тип графа} & \bf{Логичность} & \bf{Поддержка новых операций} & \bf{Качество документации} & \bf{Удобность API} \\
@@ -124,137 +128,96 @@ Keras - открытая нейросетевая библиотека, написанная на языке Python. Она предст
 
 Код программы классификации набора изображений рукописных цифр MNIST с использованием библиотеки Keras:
 \begin{listing}{1}
-	import tensorflow as  tf
-	from tensorflow import keras
-	import numpy as np
-	import matplotlib.pyplot as plt
-	mnist = keras.datasets.mnist
-	(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
-	train_images = train_images / 255.0 
-	test_images = test_images / 255.0 
-	model = keras.Sequential([
+import tensorflow as  tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+mnist = keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+train_images = train_images / 255.0 
+test_images = test_images / 255.0 
+model = keras.Sequential([
 	keras.layers.Flatten(input_shape=(28, 28)), 
 	keras.layers.Dense(128, activation=tf.nn.relu), 
 	keras.layers.Dense(10, activation=tf.nn.softmax)
 	]) 
-	model.compile(
+model.compile(
 	optimizer=tf.compat.v1.train.AdamOptimizer(),
 	loss='sparse_categorical_crossentropy',
-	metrics=[‘accuracy']) 
-	model.fit(train_images, train_labels, epochs=5)
-	test_loss, test_acc = model.evaluate(test_images, test_labels) 
-	print('Test accuracy:', test_acc)
+	metrics=[‘accuracy'])
+model.fit(train_images, train_labels, epochs=5)
+test_loss, test_acc = model.evaluate(test_images, test_labels) 
+print('Test accuracy:', test_acc)
 \end{listing}
 
 Код программы классификации набора изображений рукописных цифр MNIST с использованием библиотеки PyTorch:
 \begin{listing}{1}
-	import torch
-	import torchvision
-	from torchvision import transforms, datasets import torch.nn as nn
-	import torch.nn.functional as F
-	import torch.optim as optim
-	train = datasets.MNIST('', train=True, download=True, transform=transforms.Compose([
+import torch
+import torchvision
+from torchvision import transforms, datasets import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+train = datasets.MNIST('', train=True, download=True, 	transform=transforms.Compose([
 	transforms.ToTensor() ]))
-	test = datasets.MNIST('', train=False, download=True, transform=transforms.Compose([
+test = datasets.MNIST('', train=False, download=True, transform=transforms.Compose([
 	transforms.ToTensor() ]))
-	trainset = torch.utils.data.DataLoader(train, batch_size=10, shuffle=True)
-	testset = torch.utils.data.DataLoader(test, batch_size=10, shuffle=False)
-	class Net(nn.Module): 
+trainset = torch.utils.data.DataLoader(train, batch_size=10, shuffle=True)
+testset = torch.utils.data.DataLoader(test, batch_size=10, shuffle=False)
+class Net(nn.Module): 
 	def __init__(self):
-	super().__init__()
-	self.fc1 = nn.Linear(28*28, 128) 
-	self.fc2 = nn.Linear(128, 10)
+		super().__init__()
+		self.fc1 = nn.Linear(28*28, 128) 
+		self.fc2 = nn.Linear(128, 10)
 	def forward(self, x):
-	x = F.relu(self.fc1(x))
-	x = self.fc2(x)
-	return F.log_softmax(x, dim=1)
-	loss_function = nn.CrossEntropyLoss()
-	optimizer = optim.Adam(net.parameters(), lr=0.001) 
-	for epoch in range(5):
+		x = F.relu(self.fc1(x))
+		x = self.fc2(x)
+		return F.log_softmax(x, dim=1)
+loss_function = nn.CrossEntropyLoss()
+optimizer = optim.Adam(net.parameters(), lr=0.001) 
+for epoch in range(5):
 	for data in trainset: 
-	X, y = data
-	net.zero_grad()
-	output = net(X.view(-1,784)) 
-	loss = F.nll_loss(output, y) 
-	loss.backward() 
-	optimizer.step()
+		X, y = data
+		net.zero_grad()
+		output = net(X.view(-1,784)) 
+		loss = F.nll_loss(output, y) 
+		loss.backward() 
+		optimizer.step()
 	print(loss)
-	correct = 0
-	total = 0
-	with torch.no_grad(): 
+correct = 0
+total = 0
+with torch.no_grad(): 
 	for data in testset:
-	X, y = data
-	output = net(X.view(-1,784)) 
-	#print(output)
-	for idx, i in enumerate(output):
-	#print(torch.argmax(i), y[idx]) 
-	if torch.argmax(i) == y[idx]:
-	correct += 1 
-	total += 1
-	print("Accuracy: ", round(correct/total, 3))
+		X, y = data
+		output = net(X.view(-1,784)) 
+		#print(output)
+		for idx, i in enumerate(output):
+		#print(torch.argmax(i), y[idx]) 
+		if torch.argmax(i) == y[idx]:
+			correct += 1 
+		total += 1
+print("Accuracy: ", round(correct/total, 3))
 \end{listing}
 
 \section*{Заключение}
 
-Несмотря на то, что понятия «глубокое обучение», «искусственный интеллект», «машинное обучение» только недавно стали очень популярны и широко обсуждаемы, в науке они начали разрабатываться около полувека назад. Основой этой области являются программирование и такие разделы математики: теория вероятности, методы оптимизации, математический анализ, линейная алгебра. Учеными за время существования глубокого обучения было разработано множество библиотек. Мы разделил их на три основных класса и сравнили самых ярких представителей из них. Выбирая между библиотеками, использующими статический и динамический граф стоит брать во внимание: динамизм может как оптимизировать программируемость, так и ухудшать производительность - то есть, оптимизировать такие графы сложнее. Поэтому, отличия и компромиссы между PyTorch и TensorFlow во многом такие же, как и между динамическим интерпретируемым языком, например, Python, и статическим компилируемым языком, например, C или C++. Первый проще и работать с ним быстрее, а из второго и третьего удобнее собирать сущности, хорошо поддающиеся оптимизации. Это и есть компромисс между гибкостью и производительностью. Так же, что имеет значение для разработчиков из Крыма, можно отметить, что TensorFlow ограничивает им доступ к своему сайту, в отличии от PyTorch и Keras. Итоги работы можно наблюдать в таблице 1. 1.
-
-
-%\section*{Введение}
-
-%В классической литературе~\cite[c. 45]{Surname:year:1}
-
-%\section{Раздел}
-
-%\begin{figure*}[h!]
-%	\centering{\includegraphics[scale=0.3]{Images/icon.eps}}
-%	\caption{Вставка рисунка в формате PDF.}
-%\end{figure*}
-
-%Включать рисунки
-
-%Рассмотрим уравнение
-%\begin{equation}\label{eq:1}
-%\int_{-\infty}^{\infty}~\ldots
-%\end{equation}
-
-%Согласно~\eqref{eq:1} введ\"ем 
-
-%\begin{definition}\label{def:1}
-	
-%\end{definition}
-
-%Учитывая определение~\ref{def:1}, получим следующую
-%\begin{theorem}\label{th:1}
-%	~\ldots
-%	\begin{proof}
-%		~\ldots
-%	\end{proof}
-%\end{theorem}
-
-%\begin{corollary}\label{cor:1}
-%	~\ldots
-%	\begin{proof}
-%		~\ldots
-%	\end{proof}
-%\end{corollary}
-
-%\section*{Заключение}
-%Основным результатом данной работы является теорема~\ref{th:1}. Из  следствия~\ref{cor:1}~\ldots
-
-%\newpage
-
-%источник задаётся в формате, соответствующем ГОСТ Р 7.0.9 – 2009 («Система стандартов по информации, библиотечному и издательскому делу. Библиографическое обеспечение издательских и книготорговых процессов. Общие требования»)
-%чтобы использовать цитирование в тексте, сделайте в списке источников указание вида:
-%\refitem{название ссылки для цитирования}
-   %{имя автора}
-
-%\begin{references}
-%\refitem{Surname:year:1}
-%{Фамилия\;И.\;О.} Название публикации~// Журнал.~-- Год.~-- том X, вып. %X~-- С.~1--2.
+Несмотря на то, что понятия «глубокое обучение», «искусственный интеллект», «машинное обучение» только недавно стали очень популярны и широко обсуждаемы, в науке они начали разрабатываться около полувека назад. Основой этой области являются программирование и такие разделы математики: теория вероятности, методы оптимизации, математический анализ, линейная алгебра. Учеными за время существования глубокого обучения было разработано множество библиотек. Мы разделил их на три основных класса и сравнили самых ярких представителей из них. Выбирая между библиотеками, использующими статический и динамический граф стоит брать во внимание: динамизм может как оптимизировать программируемость, так и ухудшать производительность --- то есть, оптимизировать такие графы сложнее. Поэтому, отличия и компромиссы между PyTorch и TensorFlow во многом такие же, как и между динамическим интерпретируемым языком, например, Python, и статическим компилируемым языком, например, C или C++. Первый проще и работать с ним быстрее, а из второго и третьего удобнее собирать сущности, хорошо поддающиеся оптимизации. Это и есть компромисс между гибкостью и производительностью. Так же, что имеет значение для разработчиков из Крыма, можно отметить, что TensorFlow ограничивает им доступ к своему сайту, в отличии от PyTorch и Keras. Итоги работы можно наблюдать в таблице 1. 1.
 
 
 
-%\end{references}
+\begin{references}
+\refitem{wiki}
+Энциклопедия Wikipedia [Электронный ресурс] / Режим доступа: http://ru.wikipedia.org/wiki/
+\refitem{PyTorch}
+PyTorch [Электронный ресурс] / Режим доступа: https://pytorch.org
+\refitem{TensorFlow}
+TensorFlow   [Электронныйресурс] / Режимдоступа: https://www.tensorflow.org
+\refitem {Keras}
+Keras [Электронныйресурс] / Режимдоступа: https://keras.io
+\refitem {sim0nSays}
+Сравнение фреймворков нейронных сетей [Электронный ресурс] / Режим доступа: https://www.youtube.com/watch?v=3NoyksurUFI\&t=312s
+
+
+\end{references}
 
 %\listofruabstracts\listofenabstracts
 
