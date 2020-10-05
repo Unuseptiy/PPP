@@ -56,16 +56,16 @@
 
 \abstracts{Данная статья поясвящена сравнению библиотек глубокого обучения TensorFlow, PyTorch, Keras. Итоги сравнения представлены в виде таблицы в конце статьи.}%{текст аннотации}
 {Глубокое обучение, нейросети, библиотеки, TensorFlow, PyTorch, Keras.} %{ключевые слова}
+\section*{Введение}
+TensorFlow --- открытая библиотека для машинного обучения, разработанная компанией Google, для решения задач построения и тренировки нейронных сетей. Основной API для работы с библиотекой реализован для Python также существуют реализации для C Sharp, C++, Haskell, Java, Go и Swift. Является продолжением закрытого проекта DistBelief. Изначально TensorFlow была разработана командой Google Brain для внутреннего использования в Google, в 2015 году система была переведена в свободный доступ~\cite{wikiT}.
+
+PyTorch --- библиотека машинного обучения для языка Python с открытым исходным кодом, созданная на базе Torch. Разрабатывается преимущественно группой искусственного интеллекта Facebook. Также вокруг этого фреймворка выстроена экосистема, состоящая из различных библиотек, разрабатываемых сторонними командами: Fast.ai, упрощающая процесс обучения моделей, Pyro, модуль для вероятностного программирования, от Uber, Flair, для обработки естественного языка и Catalyst, для обучения DL и RL моделей~\cite{wikiP}.
+
+Keras --- открытая нейросетевая библиотека, написанная на языке Python. Она представляет собой надстройку над фреймворками Deeplearning4j, TensorFlow и Theano. Нацелена на оперативную работу с сетями глубинного обучения, при этом спроектирована так, чтобы быть компактной, модульной и расширяемой. Она была создана как часть исследовательских усилий проекта ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating System), а ее основным автором и поддерживающим является Франсуа Шолле (Fran?ois Chollet), инженер Google. Планировалось что Google будет поддерживать Keras в основной библиотеке TensorFlow, однако Шолле выделил Keras в отдельную надстройку, так как согласно концепции Keras является скорее интерфейсом, чем сквозной системой машинного обучения. Keras предоставляет высокоуровневый, более интуитивный набор абстракций, который делает простым формирование нейронных сетей, независимо от используемой в качестве вычислительного бэкенда библиотеки научных вычислений. Microsoft работает над добавлением к Keras и низкоуровневых библиотек CNTK~\cite{wikiK}.
 
 \section*{Сравнение библиотек глубокого обучения}
-\subsection{Теоритическое сравнение}
-TensorFlow --- открытая библиотека для машинного обучения, разработанная компанией Google, для решения задач построения и тренировки нейронных сетей. Основной API для работы с библиотекой реализован для Python также существуют реализации для C Sharp, C++, Haskell, Java, Go и Swift. Является продолжением закрытого проекта DistBelief. Изначально TensorFlow была разработана командой Google Brain для внутреннего использования в Google, в 2015 году система была переведена в свободный доступ~\cite{wiki}.
-
-PyTorch --- библиотека машинного обучения для языка Python с открытым исходным кодом, созданная на базе Torch. Разрабатывается преимущественно группой искусственного интеллекта Facebook. Также вокруг этого фреймворка выстроена экосистема, состоящая из различных библиотек, разрабатываемых сторонними командами: Fast.ai, упрощающая процесс обучения моделей, Pyro, модуль для вероятностного программирования, от Uber, Flair, для обработки естественного языка и Catalyst, для обучения DL и RL моделей~\cite{wiki}.
-
-Keras --- открытая нейросетевая библиотека, написанная на языке Python. Она представляет собой надстройку над фреймворками Deeplearning4j, TensorFlow и Theano. Нацелена на оперативную работу с сетями глубинного обучения, при этом спроектирована так, чтобы быть компактной, модульной и расширяемой. Она была создана как часть исследовательских усилий проекта ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating System), а ее основным автором и поддерживающим является Франсуа Шолле (Fran?ois Chollet), инженер Google. Планировалось что Google будет поддерживать Keras в основной библиотеке TensorFlow, однако Шолле выделил Keras в отдельную надстройку, так как согласно концепции Keras является скорее интерфейсом, чем сквозной системой машинного обучения. Keras предоставляет высокоуровневый, более интуитивный набор абстракций, который делает простым формирование нейронных сетей, независимо от используемой в качестве вычислительного бэкенда библиотеки научных вычислений. Microsoft работает над добавлением к Keras и низкоуровневых библиотек CNTK~\cite{wiki}.
-
-Вообще все современные фреймворки можно разделить на три крупных класса:
+\subsection*{Теоритическое сравнение}
+Все современные фреймворки можно разделить на три крупных класса:
 \begin{itemize}
 	\item[$1)$] Фреймворки с фиксированные модулями.
 	
@@ -124,7 +124,7 @@ while x.sum() < 100:
 	\hline
 \end{tabular}
 
-\subsection{Практическое сравнение/Программная реализация}
+\subsection*{Практическое сравнение/Программная реализация}
 
 Код программы классификации набора изображений рукописных цифр MNIST с использованием библиотеки Keras:
 \begin{listing}{1}
@@ -157,12 +157,25 @@ import torchvision
 from torchvision import transforms, datasets import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-train = datasets.MNIST('', train=True, download=True, 	transform=transforms.Compose([
+train = datasets.MNIST(
+	'', 
+	train=True, download=True, 	
+	transform=transforms.Compose([
 	transforms.ToTensor() ]))
-test = datasets.MNIST('', train=False, download=True, transform=transforms.Compose([
+test = datasets.MNIST(
+	'', 
+	train=False, 
+	download=True, 
+	transform=transforms.Compose([
 	transforms.ToTensor() ]))
-trainset = torch.utils.data.DataLoader(train, batch_size=10, shuffle=True)
-testset = torch.utils.data.DataLoader(test, batch_size=10, shuffle=False)
+trainset = torch.utils.data.DataLoader(
+	train, 
+	batch_size=10, 
+	shuffle=True)
+testset = torch.utils.data.DataLoader(
+	test, 
+	batch_size=10, 
+	shuffle=False)
 class Net(nn.Module): 
 	def __init__(self):
 		super().__init__()
@@ -205,8 +218,12 @@ print("Accuracy: ", round(correct/total, 3))
 
 
 \begin{references}
-\refitem{wiki}
-Энциклопедия Wikipedia [Электронный ресурс] / Режим доступа: http://ru.wikipedia.org/wiki/
+\refitem{wikiT}
+Энциклопедия Wikipedia [Электронный ресурс] / Режим доступа: https://en.wikipedia.org/wiki/TensorFlow
+\refitem{wikiP}
+Энциклопедия Wikipedia [Электронный ресурс] / Режим доступа: https://en.wikipedia.org/wiki/PyTorch
+\refitem{wikiK}
+Энциклопедия Wikipedia [Электронный ресурс] / Режим доступа: https://ru.wikipedia.org/wiki/Keras
 \refitem{PyTorch}
 PyTorch [Электронный ресурс] / Режим доступа: https://pytorch.org
 \refitem{TensorFlow}
